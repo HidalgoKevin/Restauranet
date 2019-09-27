@@ -1,0 +1,92 @@
+body {
+    background-image: url(../imagen/restaurante.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#buscar {
+    margin-top: 15%
+}
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#form p {
+    text-align: center;
+}
+
+#form label {
+    font-size: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    color: grey;
+}
+
+.clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover~label {
+    color: orange;
+}
+
+input[type="radio"]:checked~label {
+    color: orange;
+}
+
+#tablaReservas {
+    margin-top: 10%;
+}
+
+th {
+    text-align: center;
+    background-color: white;
+}
+
+.p-3 {
+    background-color: white;
+}
+
+.menuRest {
+    margin-bottom: 10%;
+    color: white;
+}
+
+.menuSucursal {
+    margin-top: 10%;
+    color: white;
+}
+
+.fondoBlanco {
+    background-color: white;
+}
+
+a {
+    color: blue;
+}
+
+a:hover {
+    color: blue;
+}
+
+.fade {
+    margin-bottom: 15%;
+}
+
+img.imagen {
+    margin-left: -10%;
+    padding-top: 5%;
+    align-self: center;
+}

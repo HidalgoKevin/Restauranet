@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="estilo/estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script/script.js"></script>
+    <title>Restauranet</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-sm bg-light fixed-top">
+            <a class="navbar-brand" href="#"><img src="imagen/logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <strong>Bienvenido</strong>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            <strong>restaurante</strong>
+                        </a>
+                        <div class="dropdown-menu">
+                            <button id="delete" class="btn btn-outline-primary">Borrar Cuenta</button>
+                            <button id="logOff" class="btn btn-outline-primary">Cerrar Sesion</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-sm-1 col-lg-2"></div>
+                <div class="col-sm-10 col-lg-8">
+                    <ul class="nav nav-tabs nav-justified menuSucursal" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu1">Sucursales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu2">Agregar nueva sucursal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu3">Modificar sucursal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu4">Quitar sucursal</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content justify-content-center">
+                        <div class="tab-pane container active" id="menu1">
+                            <table id="tablaSucursales">
+                                <tr>
+                                    <td>
+                                        <div class="media border p-3">
+                                            <img src="imagen/restaurante.jpg" alt="sucursal" class="mr-3 mt-3 rounded-circle" width="80" height="80">
+                                            <div class="media-body">
+                                                <p>Numero sucursal</p>
+                                                <p>Direccion</p>
+                                                <p>Ciudad</p>
+                                                <p>Telefono</p>
+                                                <p>Email</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane container fade" id="menu2">
+                            <form class="justify-content-center" action="#" method="POST">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Numero Sucursal</span>
+                                    </div>
+                                    <input type="number" class="form-control" id="numSucursal1" placeholder=""><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Direccion</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="direccion1" placeholder=""><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Ciudad</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="ciudad1" placeholder=""><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Telefono</span>
+                                    </div>
+                                    <input type="tel" class="form-control" id="telefono1" placeholder=""><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Email</span>
+                                    </div>
+                                    <input type="email" class="form-control" id="email1" placeholder=""><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Imagen</span>
+                                    </div>
+                                    <input type="file" class="form-control-file border fondoBlanco" id="imagen1"><br>
+                                </div>
+                                <div class="input-group mb-3 justify-content-center">
+                                    <input type="button" id="btnAgregar" class="btn btn-outline-success fondoBlanco" value="Agregar">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane container fade" id="menu3">
+                            <form class="justify-content-center" action="#">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Numero sucursal</span>
+                                    <select class="form-control" id="selectSucursal1"></select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Direccion</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="direccion2" placeholder=""><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Ciudad</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="ciudad2" placeholder=""><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Telefono</span>
+                                    </div>
+                                    <input type="tel" class="form-control" id="telefono2" placeholder=""><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Email</span>
+                                    </div>
+                                    <input type="email" class="form-control" id="email2" placeholder=""><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Imagen</span>
+                                    </div>
+                                    <input type="file" class="form-control-file border fondoBlanco" id="imagen2"><br>
+                                </div>
+                                <div class="input-group mb-3 justify-content-center">
+                                    <input type="button" id="btnModificar" class="btn btn-outline-success fondoBlanco" value="Modificar">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane container fade" id="menu4">
+                            <form class="form-inline justify-content-center" action="#">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Numero sucursal</span>
+                                    <select class="form-control" id="selectSucursal2"></select>
+                                    <button id="btnQuitar" class="btn btn-outline-primary fondoBlanco">Quitar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 col-lg-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-light navbar-expand-sm bg-light fixed-bottom justify-content-center">
+                    <p><strong>Grupo 4 - Desarrollo de software 2019</strong></p>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
