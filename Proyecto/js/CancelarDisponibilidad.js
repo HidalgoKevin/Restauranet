@@ -31,6 +31,10 @@ $(function() {
     var date = new Date();
     datepicker = $('.datepicker').pickadate('picker');
     datepicker.set('select', date);
+    $('.alert').on('close.bs.alert', function (e) {
+      e.preventDefault();
+      $(this).hide();
+    });
   };
 
   var agregarNuevoRango = function(e, elem) {
@@ -148,19 +152,24 @@ $(function() {
         guardar : function(e, elem) {
             
           m_diaACerrar.fecha = $("#fecha").val();
+ m_diaACerrar.fechaFormateada=datepicker.get('select', 'yyyy-mm-dd');
            //m_diaACerrar.fecha = "31-12-2019";
-          m_diasCerrados.push($.extend(true, {}, m_diaACerrar));
           
-            
+
             //para tener solo el cargado m_diaACerrar
             m_diaACerrar.id_res=id_res;
             var data = JSON.stringify(m_diaACerrar);
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
               if (this.readyState == 4 && this.status == 200) {
-                if(this.responseText=='ok'){
-                    $('#modal-agregar-dia-cerrado').modal('hide');
-                    $('.alert').show();
+                if(this.responseText>0){
+                    $('#modal-agregar-dia-cerrado').modal('hide'); 
+                 m_diaACerrar.id= this.responseText;
+                  m_diasCerrados.push($.extend(true, {}, m_diaACerrar));
+                    $('.alertExito').show();
+                }
+                else{
+                  $('.alertError').show();
                 }
               }
             };
@@ -180,11 +189,24 @@ $(function() {
         },
         borrarDiaCerrado : function(e, elem) {
           var ix = elem.diasCerrados.indexOf(elem.diacerrado);
-          m_vista.unbind();
-          elem.diasCerrados.splice(ix,1);
-          m_vista.bind();
-          //para tener todos m_diasCerrados
+          var id=elem.diacerrado.id;
+          var data = JSON.stringify(m_diaACerrar);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText=='ok'){
+                    m_vista.unbind(); elem.diasCerrados.splice(ix,1);
+                    m_vista.bind();
+                }
+              }
+            };
+            console.log(data);
+            xmlhttp.open("POST", "php/cancelar_disponibilidad_borrar.php", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send("data=" + data);
+            
           
+          //para tener todos m_diasCerrados
         }
       }
     });
