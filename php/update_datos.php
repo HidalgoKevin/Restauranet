@@ -18,7 +18,7 @@
 			
 			
 			if(mysqli_query($mysqli,$q)){
-				echo '<script language="javascript">alert("actualizo perfectamente");window.location.href="modificar.php";</script>';
+				echo '<script language="javascript">alert("actualizo perfectamente");window.location.href="../Interfaces/restaurante.php";</script>';
 			}else{
 				echo 'Error actualizando: '.mysqli_connect();
 			}

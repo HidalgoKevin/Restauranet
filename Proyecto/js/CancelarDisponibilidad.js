@@ -204,8 +204,6 @@ $(function() {
             xmlhttp.open("POST", "php/cancelar_disponibilidad_borrar.php", true);
             xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xmlhttp.send("data=" + data);
-            
-          
           //para tener todos m_diasCerrados
         }
       }

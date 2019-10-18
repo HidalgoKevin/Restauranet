@@ -76,7 +76,7 @@
             </div>
             <div class="form-group">
                 <label for="Email">E-mail</label>
-                <input type="text" name="email" class="form-control" readonly="readonly" value="<?php echo $fila[5];?>" id="Email" required>
+                <input type="text" name="email" class="form-control" readonly="readonly" value="<?php echo $fila[4];?>" id="Email" required>
             </div><br>       
                 <label>Servicio de Reserva</label><br>
                 <div class="radio">

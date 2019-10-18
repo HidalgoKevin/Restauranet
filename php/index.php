@@ -1,11 +1,3 @@
-<?php
-	session_start();
-
-	if (!isset($_SESSION['access_token'])) {
-		header('Location: login.php');
-		exit();
-	}
-?>
 <!doctype html>
 <?php 
 $con = mysqli_connect("localhost", "root","","php_login_database") or die ("Error!"); 
