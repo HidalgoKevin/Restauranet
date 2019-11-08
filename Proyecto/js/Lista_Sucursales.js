@@ -140,9 +140,13 @@ $(function() {
       type: 'get',
       success : function(response) {
         restaurantes = response;
+        $.each(restaurantes, function(ix, el) {
+          el.dias = info.dias;
+        });
         agregarBindeo();
       },
       error: function(xhr, status, error) {
+        agregarBindeo();
         console.log(xhr);
         console.log(status);
         console.log(error);
