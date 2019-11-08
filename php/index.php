@@ -1,6 +1,6 @@
 <!doctype html>
 <?php 
-$con = mysqli_connect("localhost", "root","","php_login_database") or die ("Error!"); 
+$con = mysqli_connect("localhost", "root","","restauranet") or die ("Error!"); 
 ?>
 <html lang="en">
 <head>
@@ -46,7 +46,7 @@ $con = mysqli_connect("localhost", "root","","php_login_database") or die ("Erro
 				</tbody>
 			</table>
             <span class="codigo"> <form action="logout.php" method="post">
-            <input type="submit" name="grabar" value ="Salir">
+              <input type="submit" name="grabar" value ="Salir"></form>  
             </span>
 		</div>
 	</div>

@@ -190,7 +190,7 @@ $(function() {
         borrarDiaCerrado : function(e, elem) {
           var ix = elem.diasCerrados.indexOf(elem.diacerrado);
           var id=elem.diacerrado.id;
-          var data = JSON.stringify(m_diaACerrar);
+          var data = JSON.stringify(elem.diacerrado);
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
               if (this.readyState == 4 && this.status == 200) {
