@@ -1,9 +1,6 @@
 body {
-    background-image: url(../imagen/restaurante.jpg);
+    background-color: cadetblue;
     height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 #buscar {
@@ -85,8 +82,3 @@ a:hover {
     margin-bottom: 15%;
 }
 
-img.imagen {
-    margin-left: -10%;
-    padding-top: 5%;
-    align-self: center;
-}
