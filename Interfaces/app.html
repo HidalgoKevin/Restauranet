@@ -16,6 +16,7 @@
 
 <body>
     <header>
+        <!-- Barra superior -->
         <nav class="navbar navbar-light navbar-expand-sm bg-light fixed-top">
             <a class="navbar-brand" href="#"><img src="imagen/logo.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -31,25 +32,29 @@
             <div class="row">
                 <div class="col-sm-1 col-lg-2"></div>
                 <div class="col-sm-10 col-lg-8">
-                    <form class="form-inline justify-content-center" id="buscar" action="#">
-                        <input class="form-control mr-sm-2" size="50" type="text" placeholder="Buscar restaurante">
-                        <select class="form-control">
+                    <!-- Barra de busqueda -->
+                    <form class="form-inline justify-content-center" id="buscar" action="restaurante.php">
+                        <input class="form-control mr-sm-2" size="50" type="text" placeholder="Buscar restaurante" name="buscar">
+                        <select id="selBuscar" class="form-control">
                             <option>Ciudad/Provincia</option>
                         </select>
-                        <input type="button" class="btn btn-success" id="btnBuscar" value="Buscar" />
+                        <input type="button" class="btn btn-success" id="btnBuscar" value="Buscar" name="btnBuscar" />
                     </form>
+                    <!-- Modal de login -->
                     <div id="loginModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
+                                    <!-- Titulo Modal y boton cerrar -->
                                     <h4 class="modal-title">Ingresar</h4>
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
                                 <div class="modal-body">
                                     <form action="#" class="form-inline justify-content-center">
+                                        <!-- Botones de logueo de cliente y restaurante -->
                                         <div class="button-group">
-                                            <input type="button" id="loginCliente" value="Soy Cliente" class="btn btn-outline-primary" data-target="cliente.html">
-                                            <input type="button" id="loginRestaurante" value="Soy Restaurante" class="btn btn-outline-primary">
+                                            <input type="button" id="loginCliente" value="Soy Cliente" class="btn btn-outline-primary" data-target="cliente.html" name="loginCliente">
+                                            <input type="button" id="loginRestaurante" value="Soy Restaurante" class="btn btn-outline-primary" name="loginRestaurante">
                                         </div>
                                     </form>
                                 </div>
@@ -64,7 +69,8 @@
             <div class="row">
                 <div class="col-sm-1 col-lg-2"></div>
                 <div class="col-sm-10 col-lg-8">
-                    <img class="imagen" src="imagen/data.png" alt="data" width="1020" height="500">
+                    <!-- Imagen de informacion -->
+                    <img class="imagen" src="imagen/data.png" alt="data" width="100%" height="100%">
                 </div>
                 <div class="col-sm-1 col-lg-2"></div>
             </div>
@@ -73,6 +79,7 @@
     <footer>
         <div class="container">
             <div class="row">
+                <!-- Barra inferior -->
                 <nav class="navbar navbar-light navbar-expand-sm bg-light fixed-bottom justify-content-center">
                     <p><strong>Grupo 4 - Desarrollo de software 2019</strong></p>
                 </nav>

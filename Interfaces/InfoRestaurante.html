@@ -16,6 +16,7 @@
 
 <body>
     <header>
+        <!-- Barra superior -->
         <nav class="navbar navbar-light navbar-expand-sm bg-light fixed-top">
             <a class="navbar-brand" href="#"><img src="imagen/logo.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -28,9 +29,10 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             <strong>cliente </strong>
                         </a>
+                        <!-- Menu logout -->
                         <div class="dropdown-menu">
                             <button id="delete" class="btn btn-outline-primary">Borrar Cuenta</button>
-                            <button id="logOff" class="btn btn-outline-primary">Cerrar Sesion</button>
+                            <button id="logOut" class="btn btn-outline-primary">Cerrar Sesion</button>
                         </div>
                     </li>
                 </ul>
@@ -42,6 +44,7 @@
             <div class="row">
                 <div class="col-sm-1 col-lg-2"></div>
                 <div class="col-sm-10 col-lg-8">
+                    <!-- carousel de imagenes de restaurante -->
                     <div id="demo" class="carousel slide" data-ride="carousel">
 
 
@@ -73,6 +76,7 @@
                         </a>
                     </div>
 
+                    <!-- Modal confirmacion de reserva -->
                     <div id="RegisModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -94,6 +98,7 @@
             <div class="row">
                 <div class="col-sm-1 col-lg-2"></div>
                 <div class="col-sm-10 col-lg-8">
+                    <!-- Menu de pestañas -->
                     <ul class="nav nav-tabs nav-justified menuRest" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#home">Informacion</a>
@@ -105,8 +110,9 @@
                             <a class="nav-link" data-toggle="tab" href="#menu2">Menu</a>
                         </li>
                     </ul>
+                    <!-- Informacion de restaurante -->
                     <div class="tab-content">
-                        <div class="tab-pane container active" id="home">
+                        <div class="tab-panel container active" id="home">
                             <div class="media border p-3">
                                 <img src="imagen/restaurante.jpg" alt="restaurante1" class="mr-3 mt-3 rounded-circle" width="80" height="80">
                                 <div class="media-body">
@@ -139,6 +145,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Lista de pedidos de reserna -->
                         <div class="tab-pane container fade" id="menu1">
                             <div class="media border p-3">
                                 <img src="imagen/restaurante.jpg" alt="pedido1" class="mr-3 mt-3 rounded-circle" width="80" height="80">
@@ -148,6 +155,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Boton de reservar -->
                         <div class="tab-pane container fade" id="menu2">
                             <div class="input-group mb-3 justify-content-center">
                                 <button id="btnResgis" class="btn btn-outline-primary justify-content-center fondoBlanco" data-toggle="modal" data-target="#regisModal">Registrar</button>
@@ -163,6 +171,7 @@
     </div>
 
     <footer>
+        <!-- Barra inferior -->
         <div class="container">
             <div class="row">
                 <nav class="navbar navbar-light navbar-expand-sm bg-light fixed-bottom justify-content-center">

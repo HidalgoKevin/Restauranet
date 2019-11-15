@@ -16,6 +16,7 @@
 
 <body>
     <header>
+        <!-- Barra superior -->
         <nav class="navbar navbar-light navbar-expand-sm bg-light fixed-top">
             <a class="navbar-brand" href="#"><img src="imagen/logo.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -28,9 +29,10 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             <strong>cliente</strong>
                         </a>
+                        <!-- Menu logout -->
                         <div class="dropdown-menu">
                             <button id="delete" class="btn btn-outline-primary">Borrar Cuenta</button>
-                            <button id="logOff" class="btn btn-outline-primary">Cerrar Sesion</button>
+                            <button id="logOut" class="btn btn-outline-primary">Cerrar Sesion</button>
                         </div>
                     </li>
                 </ul>
@@ -42,6 +44,7 @@
             <div class="row">
                 <div class="col-sm-1 col-lg-2"></div>
                 <div class="col-sm-10 col-lg-8">
+                    <!-- Lista de restaurantes de resultado de busqueda -->
                     <table id="tablaReservas">
                         <tr>
                             <th>
@@ -79,7 +82,7 @@
                                             </form>
                                             <small><i>Direccion</i></small></h4>
                                         <p>Informacion del restaurante</p>
-                                        <button class="btn btn-outline-primary" id="ver">Ver</button>
+                                        <button class="btn btn-outline-primary" id="ver" name="btnVer">Ver</button>
                                     </div>
                                 </div>
                             </td>

@@ -7,7 +7,7 @@ body {
 }
 
 #buscar {
-    margin-top: 15%
+    margin-top: 15%;
 }
 
 #form {
@@ -89,4 +89,16 @@ img.imagen {
     margin-left: -10%;
     padding-top: 5%;
     align-self: center;
+}
+
+.navbar-nav {
+    padding-right: 30px;
+}
+
+#demo {
+    padding: 10px;
+}
+
+select {
+    width: 50px;
 }

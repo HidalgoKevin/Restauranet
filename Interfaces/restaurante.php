@@ -23,6 +23,7 @@ include '../php/librerias.php'; //carga de archivos bootstrap 4 para el formular
 $q='SELECT * FROM restaurant'; //consulta de datos a la bd
 $resultado=$mysqli->query($q); //aplicamos la consulta y guardamos la accion en uan variable $resultado
 $fila= $resultado->fetch_row();//guardamos el array con los datos en la variable $fila
+echo json_encode($fila);
 
 if(!$fila){
   //die('Error en consulta: ' . mysqli_errno());
