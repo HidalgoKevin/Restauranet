@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="lib/themes/default.time.css">
     
 </head>
-<body class="fondo_pag">
+<body class="principal-background">
    <div>
     <div id="cabecera">
     </div>
   <form id="disponibilidad-horaria" class="containers">
    <div class="container-dentro">
        <div class="alert alert-success alert-dismissible fade show" role="alert" style="display:none">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <i class="fas fa-check"></i> 
         El horario se guardo exitosamente!
       </div>
         <div class=" row">
@@ -69,7 +69,7 @@
         </div>
 
         <fieldset class="border p-3">
-          <legend class="titulitos w-auto">Promedio reserva 
+          <legend class="sub-titulitos w-auto">Promedio reserva 
           <a href="#" data-toggle="tooltip" data-placement="top" class="titulitos" title="Cuantas personas en promedio en un determinado tiempo"><i class="fas fa-exclamation-circle"></i></a></legend>
 
           <div class="row">
@@ -99,8 +99,11 @@
 
         </fieldset>
         <div class="form-group row">
-          <div class="boton col-md-3 col-sm-11">
-            <button rv-on-click="eventos.guardar" type="button" class="btn"><b>Guardar</b></button>
+         <div class="col-4">
+           
+         </div>
+          <div class=" col-md-4 col-sm-11">
+            <button rv-on-click="eventos.guardar" type="button" class="boton btn"><b>Guardar</b></button>
           </div>
         </div>
        </div> 
