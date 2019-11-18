@@ -1,0 +1,3 @@
+CREATE TABLE `direccion_rest` ( `id_dir` int(11) NOT NULL,
+ `idrestaurant` int(11) NOT NULL, `direccion` varchar(150) NOT NULL,
+ `localidad` varchar(50) NOT NULL, `provincia` varchar(50) NOT NULL )
