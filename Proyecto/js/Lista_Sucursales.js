@@ -3,28 +3,28 @@ $(function() {
   var restaurantes;
   var info = {
     id:1,
-    nombre: "Restauranet-Prueba",
-    telefono:12345678,
-    direccion: "Rico Ezeiza",
-    numero:123,
-    localidad:"Ezeiza",
-    provincia:"Buenos Aires",
-    email:"restauranet@hotmail.com",
+    nombre: "",
+    telefono:0,
+    direccion: "",
+    numero:0,
+    localidad:"",
+    provincia:"",
+    email:"",
     dias: [
       {
         id: 1,
         nombre: "Lunes",
         rangos: [
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           }]
       },
@@ -34,15 +34,15 @@ $(function() {
         seleccionado: false,
         rangos:  [
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           }]
       },
@@ -51,15 +51,15 @@ $(function() {
         nombre: "Miercoles",
         rangos:  [
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           }]
       },
@@ -68,15 +68,15 @@ $(function() {
         nombre: "Jueves",
         rangos:  [
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           }]
       },
@@ -85,15 +85,15 @@ $(function() {
         nombre: "Viernes",
         rangos:  [
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           }]
       },
@@ -102,15 +102,15 @@ $(function() {
         nombre: "Sabado",
         rangos:  [
           {
-            de:1230,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           }]
       },
@@ -119,15 +119,15 @@ $(function() {
         nombre: "Domingo",
         rangos:  [
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           },
           {
-            de:2300,
+            de:0,
             a:0
           }]
       }

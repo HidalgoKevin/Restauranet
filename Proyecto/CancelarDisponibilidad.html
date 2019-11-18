@@ -15,19 +15,19 @@
     <link rel="stylesheet" href="lib/themes/default.date.css">
     <link rel="stylesheet" href="lib/themes/default.time.css">
 </head>
-<body class="fondo_pag">
+<body class="principal-background">
    <div>
     <div id="cabecera">
     </div>
   <div id="cancelar-disponibilidad">
     <div class="alert alertExito alert-success alert-dismissible fade show" role="alert" style="display:none">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        El horario se guardo exitosamente!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><i class="fas fa-check"></i> 
+         El horario se guardo exitosamente!
       </div>
     <h1 class="titulitos"><i class="fas fa-calendar-times"></i> Cancelar Disponibilidad</h1>
     
     <fieldset class="border p-3">
-      <legend class="titulitos w-auto">Dias cerrados</legend>
+      <legend class="sub-titulitos w-auto">Dias cerrados</legend>
       <div class="card" rv-each-diacerrado="diasCerrados">
         <div class="card-body">
           <div class="row">
@@ -45,10 +45,14 @@
         </div>
       </div>
     </fieldset>
-
-    <div class="col-sm-12">
-      <a href="#" data-toggle="modal" data-target="#modal-agregar-dia-cerrado" class="agregar" rv-on-click="eventos.abrirPopup">+Agregar</a>
+    <div class="row">
+     <div class="col-md-10">
+     </div>
+      <div class="col-md-1 col-12">
+        <a href="#" data-toggle="modal" data-target="#modal-agregar-dia-cerrado" class="agregar" rv-on-click="eventos.abrirPopup">+Agregar</a>
+      </div>
     </div>
+    
         <div class="modal fade" id="modal-agregar-dia-cerrado" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
          
           <div class="modal-dialog" role="document">

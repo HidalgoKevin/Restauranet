@@ -11,6 +11,7 @@ $(function() {
   var btn_logeo={};
   var btn_logout={};
   var name_user={};
+  var btn_agregar={};
   var roles = {
     USUARIO : 2,
     RESTAURANTE: 1
