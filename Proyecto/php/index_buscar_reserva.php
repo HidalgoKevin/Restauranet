@@ -19,7 +19,9 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
 </head>
-
+	<form method="POST"  action="funcion_busqueda_listado.php">
+  		  <input type="submit" value="Volver" class="btn btn-danger">
+    </form>
 <body>
 	<div class="alert alert-primary" role="alert">
 		Elija la opcion para mostrar Reservas
@@ -28,7 +30,6 @@
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
 	  Ver mis Reservas
 	</button>
-
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
@@ -48,7 +49,7 @@
 		</div>
 	  </div>
 	</div>
-
+	
 </body>
 <!--script type="text/javascript">
 	$('#exampleModalLongTitle').on('shown.bs.modal', function () {

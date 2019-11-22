@@ -1,6 +1,8 @@
 <?php
 	session_start();
 	echo '<pre>','<h3>',"Funcion Crear Reserva Restauranet (Cliente)<br>",'</h3>','</pre>';
+	$idrestaurant=$_POST["ver"];
+	echo $idrestaurant;
 ?>
 <!doctype html>
 <html lang="es">
@@ -25,7 +27,7 @@
   <body>
 		<div class="container">
 			<h1>Datos de Reserva: Fecha - Hora - Cantidad de personas</h1><br><br>
-				<form class="form-horizontal" action="crear_reserva.php" method="post" onsubmit="pruebaemail(correo.value)">
+				<form class="form-horizontal" action="crear_reserva.php" id="form_reserva<?php echo $idrestaurant; ?>" method="post" onsubmit="pruebaemail(correo.value)">
 					<div class="form-group" >
 						<div class="col-sm-3">					  
 							<label for="datetime">Fecha y hora</label>
@@ -53,14 +55,19 @@
 				<br>
 				<div class="form-group">
 					<div class="col-sm-offset-1 col-sm-3">
-						<button type="submit" class="btn btn-block btn-success" onsubmit="pruebaemail(correo.value)">>Reservar</button><br><br>
-
+						<input type="hidden" name="ver" value="<?php echo $idrestaurant; ?>"  />
+                        <input type="submit" value="Reservar" class="btn btn-success">
+						</button><br><br>
+						
 					</div>
 				</div>
-				<a href="..\app_funcion_modificar\index_juanca.php" target="_blank">Salir</a>
+				
+ </form>
 				</form>
 		</div>
-			
+			<form method="POST" id="form_ver_rest_<?php echo $idrestaurant; ?>" action="ver_restaurant.php">
+		        <input type="hidden" name="ver" value="<?php echo $idrestaurant; ?>"  />
+				<input type="submit" value="Volver" class="btn btn-danger">
 			
       </body>
 	  
