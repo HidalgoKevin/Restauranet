@@ -29,7 +29,7 @@
 			<h1>Datos de Reserva: Fecha - Hora - Cantidad de personas</h1><br><br>
 				<form class="form-horizontal" action="crear_reserva.php" id="form_reserva<?php echo $idrestaurant; ?>" method="post" onsubmit="pruebaemail(correo.value)">
 					<div class="form-group" >
-						<div class="col-sm-3">					  
+						<div class="col-sm-3">	 
 							<label for="datetime">Fecha y hora</label>
 							<div class="input-group date" id="datetime">
 								<input type='text' class="form-control" name="fechahora"/>
@@ -38,9 +38,8 @@
 									</span>
 							</div>					  
 						</div>
-						
 						<div class="col-sm-2">
-							<label for="cantidad">Cantidad de personas</label>											
+							<label for="cantidad">Cantidad de personas</label>	
 							<input type="number" class="form-control" value="1" min="1" max="10" name="cantidad"/>						
 						</div>
 						<div class="col-sm-2">   
