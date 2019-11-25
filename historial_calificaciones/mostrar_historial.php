@@ -15,13 +15,19 @@ echo '--------------------------------------------------------------------------
 echo 'ESTE ES SU HISTORIAL DE CALIFICACIONES: '.'<br>';
 echo '--------------------------------------------------------------------------------------------------------------------------------'.'<br><br>';
 
-while($row= mysqli_fetch_assoc($result))
-{		
+$row_cnt = mysqli_num_rows($result);
+ 
+if($row_cnt){
+	while($row= mysqli_fetch_assoc($result))
+	{		
 		echo "Restaurante:     ".$row['nombre'].'<br><br>';
 		echo 'Comentario: "...'.$row['comentario'].'..."'.'<br>';
 		echo 'Estrellas: '.$row['estrellas'].'<br><br>';
 		echo '---------------------------------------------------------------------------------------------------------------------------------'.'<br>';
-}
+	}
+}else{
+	echo 'Aun no hiciste ninguna calificacion...';
+	}
 
 echo '<br><br>'.'<input  calss="btn btn-primary" onClick="javascript:window.history.back();" type="button" name="Submit" value="Atrás" />';
 
