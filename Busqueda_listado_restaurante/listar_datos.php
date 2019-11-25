@@ -8,7 +8,7 @@ if(isset($_POST['buscar'])){
 	
 	$datos=htmlentities($_POST['datos']	);
 	$query = "SELECT nombre, direccion, localidad, provincia, descripcion FROM restaurant R INNER JOIN direccion_rest D on R.idrestaurant=D.idrestaurant
-	WHERE nombre='$datos' OR localidad='$datos' OR provincia='$datos' ";
+	WHERE nombre LIKE '%".$datos."%' OR localidad LIKE '%".$datos."%' OR provincia LIKE '%".$datos."%' ";
 
 $result = mysqli_query($connect, $query);
 
@@ -23,7 +23,7 @@ while($row = mysqli_fetch_assoc($result))
 		echo '--------------------------------------------------------------------------------------------------'.'<br>';
 
 }
-echo "<a type='button' href='prueba_busqueda_listado.php' target='_blank'>"."<h3>"."Regresar"."<h3>"."</a>";
+echo '<br><br>'.'<input  calss="btn btn-primary" onClick="javascript:window.history.back();" type="button" name="Submit" value="Atrás" />';
 
 }
 ?>
