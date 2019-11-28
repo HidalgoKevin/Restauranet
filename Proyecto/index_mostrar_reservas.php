@@ -2,6 +2,7 @@
 	session_start();
     date_default_timezone_set('America/Argentina/Buenos_Aires');	
 	$fecha_actual= date('d-m-Y');
+    $id=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,7 +93,7 @@
             $('#mostrar').click(function(){
               $.ajax({
                 type:'GET', //aqui puede ser igual get
-                url: 'mostrar_reservasHtml.php',//aqui va tu direccion donde esta tu funcion php
+                url: 'mostrar_reservasHtml.php?id='+<?php echo $id ; ?>,//aqui va tu direccion donde esta tu funcion php
                 data: {fechareservas:$('#datepicker').val()},//aqui tus datos
                 success:function(data){
                     $("#respa").html(data);//lo que devuelve tu archivo mifuncion.php

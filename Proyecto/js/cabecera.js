@@ -115,7 +115,7 @@ var agregarBindeo = function() {
       url: 'php/logout.php',
       type: 'get',
       success:  function (response) {
-        location.reload();
+        location.href="index.php";
       }
     });
   };

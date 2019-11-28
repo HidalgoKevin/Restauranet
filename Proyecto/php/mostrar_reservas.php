@@ -31,7 +31,7 @@
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
     }
-	$result_reservas = "SELECT * FROM reservas WHERE idcliente=$idcliente";
+	$result_reservas = "SELECT * FROM reservas WHERE idcliente=$idcliente ORDER BY fecha , hora";
 	$resultado_reservas = mysqli_query($mysqli, $result_reservas);
 	while($row_reservas = mysqli_fetch_array($resultado_reservas)){
 		$cliente=$row_reservas['idcliente'];
