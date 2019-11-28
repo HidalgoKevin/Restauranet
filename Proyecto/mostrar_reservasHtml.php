@@ -17,15 +17,15 @@
 	
 	//echo "<h1>Lista de Reservas</h1>";
 	echo '<br><br>';
-	$mostrarflag="";
 	
-	if($numeroReserva){
+	
+
       if(isset($_GET['fechareservas'])){
 
           $fecha = date("Y-m-d", strtotime($_GET["fechareservas"]));
 
           $result_reservas = "SELECT U.nombres, R.fecha, R.hora, R.cantidad_personas FROM usuario U RIGHT JOIN reservas R ON R.idcliente = U.ID_US
-                          WHERE fecha >= '$fecha' AND MONTH(fecha) = MONTH('$fecha') AND YEAR(fecha) = YEAR('$fecha') ORDER BY fecha ASC";
+                          WHERE R.ID_RES=$numeroReserva AND fecha >= '$fecha' AND MONTH(fecha) = MONTH('$fecha') AND YEAR(fecha) = YEAR('$fecha') ORDER BY fecha ASC";
 
           $resultado_reservas = mysqli_query($mysqli, $result_reservas);
 
@@ -44,7 +44,7 @@
           if($mostrarflag){
 
               $result_reservas = "SELECT U.nombres, R.fecha, R.hora, R.cantidad_personas FROM usuario U RIGHT JOIN reservas R ON R.idcliente = U.ID_US
-                          WHERE fecha = CURDATE() ORDER BY hora ASC";
+                          WHERE R.ID_RES=$numeroReserva AND fecha = CURDATE() ORDER BY hora ASC";
               $resultado_reservas = mysqli_query($mysqli, $result_reservas);
 
               while($row_reservas = mysqli_fetch_array($resultado_reservas)){
@@ -64,7 +64,7 @@
               }else{
 
                   $result_reservas = "SELECT U.nombres, R.fecha, R.hora, R.cantidad_personas FROM usuario U RIGHT JOIN reservas R ON R.idcliente = U.ID_US
-                                      WHERE fecha>=CURDATE() ORDER BY fecha ASC";
+                                      WHERE R.ID_RES=$numeroReserva AND fecha>=CURDATE() ORDER BY fecha ASC";
                   $resultado_reservas = mysqli_query($mysqli, $result_reservas);
 
                   while($row_reservas = mysqli_fetch_array($resultado_reservas)){
@@ -82,5 +82,5 @@
                   }	
               }
       }
-    }
+  
 ?>

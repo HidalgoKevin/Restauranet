@@ -91,17 +91,17 @@ var agregarBindeo = function() {
   
   if(usuario && usuario.id) {
     document.getElementById("reservas-cliente").href="index_buscar_reserva.php?id="+usuario.id;
-    if(usuario.id==1){
+    if(usuario.rol==1){
       lista_pag_cliente.forEach((pag_cliente)=>{
         if(url.includes(pag_cliente)){
-          location.href="index.php?modal=1";
+          location.href="index.php";
         }
       });
     }
     else{
       lista_pag_res.forEach((pag_res)=>{
         if(url.includes(pag_res)){
-          location.href="index.php?modal=1";
+          location.href="index.php";
         }
       });
     }
@@ -121,11 +121,6 @@ var agregarBindeo = function() {
         }
     });
   }
-  
-  $(".boton-eliminar-tratamiento").click(function(){
-    alert('Ha hecho click sobre el boton'); 
-    return true; 
-  });
 }
   
 var onSuccess = function(user, rol) {

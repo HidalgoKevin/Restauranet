@@ -39,7 +39,7 @@ $idrestaurant=$_GET['id'];
             <a class="col-1" href="Pantalla_principal.html" target="_blank"></a>
             <form method="POST" id="form_ver_rest_<?php echo $idrestaurant; ?>" action="ver_restaurant.php">
             <input  type="hidden" name="ver" value="<?php echo $idrestaurant; ?>"  />
-            <a href="lista_datosHTML.php">
+            <a class="titulitos" href="lista_datosHTML.php">
              <i class="fas fa-arrow-left"></i>
             </a>
             </form>
