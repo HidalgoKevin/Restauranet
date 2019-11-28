@@ -1,18 +1,60 @@
 $(document).ready(function() {
+
+    $.getJSON("script/localidades.json",
+        function(dato) {
+            for (d in dato.localidades) {
+                $('#selBuscar').append($("<option></option>").attr("value",
+                    d).text(dato.localidades[d].nombre + "/" + dato.localidades[d].provincia.nombre));
+            }
+        }
+    );
+
     $("#loginCliente").on("click", function() {
         window.location = "cliente.html"
+            // $.ajax({
+            //     type: "GET",
+            //     url: "../login.php",
+            //     async: true,
+            //     success: function(response) {
+            //         window.location = "cliente.html"
+            //     },
+            //     error: function(obj, error, objError) {
+            //         console.log("no se conecta con el servidor");
+            //     }
+            // });
+            // pop_up("../php/index.php");
     });
 
     $("#loginRestaurante").on("click", function() {
         window.location = "restaurante.html"
     });
 
-    $("#logOff").on("click", function() {
+    $("#logOut").on("click", function() {
         window.location = "app.html"
     });
 
     $("#btnBuscar").on("click", function() {
-        window.location = "busqueda.html"
+        //window.location = "busqueda.html"
+        $.ajax({
+            type: "POST",
+            url: "restaurante.php",
+            contentType: "application/json; charset=utf-8",
+            data: null,
+            dataType: "json",
+            success: function(result) {
+
+                $.each(result, function() {
+
+                    /*$('#selEmpleado').append($("<option></option>").attr("value",
+                        this.idempleado).text(this.apellido));*/
+
+                });
+
+            },
+            error: function(xhr, status, error) {
+                console.log("No ha sido posible cargar las opciones.");
+            }
+        })
     });
 
     $("#ver").on("click", function() {
@@ -48,4 +90,11 @@ $(document).ready(function() {
     $("#btnQuitar").on("click", function() {
         $("#selectSucursal:selected").remove();
     });
+
+    function pop_up(pagina) {
+        var opciones = "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, width=508, height=365, top=85, left=140";
+        window.open(pagina, "", opciones);
+    }
+
+
 });
