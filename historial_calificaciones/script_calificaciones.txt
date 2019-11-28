@@ -1,0 +1,7 @@
+CREATE TABLE `calificaciones` ( `ID_CAL` int(11) NOT NULL, `ID_US` int(11) NOT NULL,
+ `ID_RES` int(11) NOT NULL, `comentario` varchar(200) DEFAULT NULL, `estrellas` tinyint(4) NOT NULL )
+
+
+ID_cAL es primary key
+ID_US es foreign key traida de la tabla de usuario
+ID_RES es foreign key traida de la tabla restaurante
