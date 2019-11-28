@@ -31,11 +31,10 @@ while($row = mysqli_fetch_assoc($result))
           <a name="ver" href="ver_restaurant.php?id=<?php echo $idrestaurant; ?>" id="ver" class="boton btn" value="<?php echo $idrestaurant; ?>">Ver más</a>
        </div>
        </div>
-	echo "<a type='button' href='PHP Correspondiente' target='_blank'>"."<h3>"."Regresar"."<h3>"."</a>";
        </fieldset>
       <br>
       <?php
-      
+       echo "<a type='button' href='PHP Correspondiente' target='_blank'>"."<h3>"."Regresar"."<h3>"."</a>";
        echo '<hr width="50%">'.'<br>';
 }
 }
