@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalabre=no, initial-scale=1, maximum-scale=1,minium-scale=1">
-    <title>Disponibilidad Horaria</title>
+    <title>Cancelar Disponibilidad</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -15,39 +15,19 @@
     <link rel="stylesheet" href="lib/themes/default.date.css">
     <link rel="stylesheet" href="lib/themes/default.time.css">
 </head>
-<body class="bg_cancelar">
+<body class="principal-background">
    <div>
-    <nav class="navbar fixed-top" role="navigation">
-          <div class="row">
-                <div class="col-md-8 col-sm-1 col-1" id="menu-titulo">
-                   <a class="navbar-brand" href="#"><div id="titulo">Restauranet</div></a>
-                </div>
-                <ul class="menu_completo col-md-4 col-sm-11 col-11">
-                   <li class="submenu">
-                        <a class="icon-menu"><i class="fas fa-bars"></i></a>
-                      <ul id="menu-contenedor">
-                        <div >
-                            <div id ="menu" class="row" >
-                            <span class="col-lg-5 col-md-1 col-sm-1 "></span>
-                            <a href="#"  class="btn btn-md col-lg-3 col-md-5  col-sm-12 "><i class="fas fa-user"></i> Sign Up</a>
-                            <a href="#" class="btn btn-md col-lg-3 col-md-4  col-sm-12 "><i class="fas fa-sign-in-alt"></i> Login</a>
-                            </div>
-                         </div>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-  
+    <div id="cabecera">
+    </div>
   <div id="cancelar-disponibilidad">
     <div class="alert alertExito alert-success alert-dismissible fade show" role="alert" style="display:none">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        El horario se guardo exitosamente!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><i class="fas fa-check"></i> 
+         El horario se guardo exitosamente!
       </div>
-    <h1>Cancelar Disponibilidad</h1>
+    <h1 class="titulitos"><i class="fas fa-calendar-times"></i> Cancelar Disponibilidad</h1>
     
     <fieldset class="border p-3">
-      <legend class="w-auto">Dias cerrados</legend>
+      <legend class="sub-titulitos w-auto">Dias cerrados</legend>
       <div class="card" rv-each-diacerrado="diasCerrados">
         <div class="card-body">
           <div class="row">
@@ -65,10 +45,14 @@
         </div>
       </div>
     </fieldset>
-
-    <div class="col-sm-12">
-      <a href="#" data-toggle="modal" data-target="#modal-agregar-dia-cerrado" class="agregar" rv-on-click="eventos.abrirPopup">+Agregar</a>
+    <div class="row">
+     <div class="col-md-10">
+     </div>
+      <div class="col-md-1 col-12">
+        <a href="#" data-toggle="modal" data-target="#modal-agregar-dia-cerrado" class="agregar" rv-on-click="eventos.abrirPopup">+Agregar</a>
+      </div>
     </div>
+    
         <div class="modal fade" id="modal-agregar-dia-cerrado" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
          
           <div class="modal-dialog" role="document">
@@ -131,7 +115,7 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button rv-on-click="eventos.guardar" type="button" class="boton btn ">Guardar</button>
+                <button rv-on-click="eventos.guardar" type="button" class="boton btn "><b>Guardar</b></button>
               </div>
             </div>
           </div>
@@ -149,6 +133,8 @@
     <script src="lib/picker.time.js"></script>
     <script src="lib/translations/es_ES.js"></script>
     <script src="js/rivets.bundled.min.js"></script>
+    <script src="js/cabecera.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=googleAPILoaded" async defer></script>
     <script src="js/CancelarDisponibilidad.js"></script>
 </body>
 </html>
