@@ -1,5 +1,7 @@
 <?php
 	session_start();
+
+$idrestaurant=$_GET['id'];
 ?>
 
 <!doctype html>
@@ -50,7 +52,8 @@
                 unset($_SESSION['msg']);
             }
             ?>
-              <form class="form-horizontal" action="php/crear_reserva" method="POST">
+              <form class="form-horizontal" action="php/crear_reserva.php" method="POST">
+                 <input  type="hidden" name="id" value="<?php echo $idrestaurant; ?>"  />
                   <div class="form-group" >
                      <br><br>
                      <div class="row">
