@@ -58,7 +58,7 @@ $idrestaurant=$_GET['id'];
                      <br><br>
                      <div class="row">
                       <div class="col-md-6 col-12">					  
-                          <label class="sub-titulitos" for="datetime">Fecha y hora</label>
+                          <label class="sub-titulitos" for="datetime">Fecha y hora test</label>
 							<div class="input-group date" id="datetime" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input" name="fechahora" data-target="#datetimepicker1"/>
                                 <div class="input-group-append" data-target="#datetime" data-toggle="datetimepicker">
