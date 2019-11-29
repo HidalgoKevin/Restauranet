@@ -77,6 +77,9 @@ $id_dir=$row_rest['ID_RES'];
          <br>
           <a href="Formulario_crear_reserva.php?id=<?php echo $idrestaurant; ?>" value="Reservar Ya" class="boton btn">Reservar</a>
           <br>
+           <br>
+          <a href="lista_datosHTML.php?id=<?php echo $idrestaurant; ?>" value="Atras" class="boton btn">Volver</a>
+          <br>
         </div>
         <!--<form method="POST" id="form_ver_rest_<?//php echo $idrestaurant; ?>" action="Formulario_crear_reserva.php">
           <input type="hidden" name="ver" value="<?//php echo $idrestaurant; ?>"  />
