@@ -34,11 +34,26 @@
 	$result_reservas = "SELECT * FROM reservas WHERE idcliente=$idcliente ORDER BY fecha , hora";
 	$resultado_reservas = mysqli_query($mysqli, $result_reservas);
 	while($row_reservas = mysqli_fetch_array($resultado_reservas)){
+		//EN CADA PASADA CAPTURO EL ID_RES PARA IMPRIMIR LOS DATOS CORRESPONDIENTES DE CADA RESTAURANT
+		$idrestaurante=$row_reservas['ID_RES'];
+		$result = "SELECT * FROM restaurante WHERE ID_RES=$idrestaurante";
+		$resultado = mysqli_query($mysqli, $result);
+		$row_resultado = mysqli_fetch_array($resultado);
+		$nombre=$row_resultado['nombre'];
+		//OBTENGO LOS DATO DE LA UBICACION DEL RESTAURANT
+		$result = "SELECT * FROM direccion WHERE ID_DIR=$idrestaurante";
+		$resultado = mysqli_query($mysqli, $result);
+		$row_resultado = mysqli_fetch_array($resultado);
+		//AQUI SE OBTIENEN LOS DATOS DE LA RESERVA
 		$cliente=$row_reservas['idcliente'];
 		$idreserva=$row_reservas['idreserva'];
+		//SE IMPRIMEN POR PANTALLA LOS DATOS DE LA RESERVA QUE SE OBTUVIERON DE LAS QUERYS
 		echo '<b><i class="far fa-calendar-alt"></i> Fecha: </b>'.date('d/m/Y', strtotime($row_reservas['fecha']))."<br>"."<br>";
         echo '<b><i class="fas fa-clock"></i> Hora:</b> '.$row_reservas['hora']."<br>"."<br>";
-		echo '<b><i class="fas fa-users"></i> Cantidad de personas: </b>'.$row_reservas['cantidad_personas']."<br>";
+		echo '<b><i class="fas fa-users"></i> Cantidad de personas: </b>'.$row_reservas['cantidad_personas']."<br><br>";
+		echo '<b><i class="fas fa-utensils"></i> Restaurant:</b> '.$nombre."<br>"."<br>";
+		echo '<b><i class="fas fa-map-marker-alt"></i> Localidad:</b> '.$row_resultado['localidad']."<br>"."<br>";
+		echo '<b><i class="fas fa-road"></i> Calle:</b> '.$row_resultado['nombreCalle'].",".$row_resultado['numero']."<br>"."<br>";
 		?>
 		<form method="POST" id="form_eliminar_<?php echo $idreserva; ?>" action="php/borrar_reserva.php">
                             <br>

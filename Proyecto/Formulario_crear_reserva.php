@@ -80,6 +80,9 @@ $idrestaurant=$_GET['id'];
                  <div class="col-md-4"></div>
                   <div class="col-md-4 col-12">
                       <button type="submit" class="boton btn btn-block">Reservar</button><br><br>
+                        <br>
+                        <!--<a href="ver_restaurant.php?id=<?//php echo $idrestaurant; ?>" value="Atras" class="boton btn">Volver</a>-->
+                        <br>
                   </div>
                   </div>
               </div>

@@ -34,7 +34,6 @@ while($row = mysqli_fetch_assoc($result))
        </fieldset>
       <br>
       <?php
-       echo "<a type='button' href='PHP Correspondiente' target='_blank'>"."<h3>"."Regresar"."<h3>"."</a>";
        echo '<hr width="50%">'.'<br>';
 }
 }
