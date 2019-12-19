@@ -44,7 +44,7 @@ $id_dir=$row_rest['ID_RES'];
       <div class="row contenedor-fondo container">
         <br><br>
         <div class="col-1">
-          <a href="lista_datosHTML.php" class="sub-titulitos" value="Ver Mas Restaurantes"><i class="fas fa-arrow-left"></i></a>
+          <a href="javascript:history.go(-1)" class="sub-titulitos" value="Ver Mas Restaurantes"><i class="fas fa-arrow-left"></i></a>
         </div>
         <div class="col-8">
         
