@@ -61,5 +61,11 @@
                             <input type="submit" value="Cancelar Reserva" class="boton btn">
                            <hr width="50%">
                         </form>
+		<form method="POST" id="form_calificar_<?php echo $idreserva; ?>" action="php/calificar_reserva.php">
+                            <br>
+                            <input type="hidden" name="calificar" value="<?php echo $idreserva; ?>"/>
+                            <input type="submit" value="Calificar" class="boton btn">
+                           <hr width="50%">
+                        </form>
 	    <?php	
 }?>
