@@ -73,36 +73,32 @@ while($row = mysqli_fetch_assoc($result))
 
 if($comprobado){
 	
-	$result_datos= "INSERT INTO reservas (idcliente,ID_RES, fecha, hora,cantidad_personas,estado) VALUES ('$idcliente','$idrestaurante', STR_TO_DATE(REPLACE('$fecha','/','.') ,GET_FORMAT(date,'USA')),'$hora','$cantidad',0)";
+	$result_datos= "INSERT INTO reservas (idcliente,ID_RES, fecha, hora,cantidad_personas) VALUES ('$idcliente','$idrestaurante', STR_TO_DATE(REPLACE('$fecha','/','.') ,GET_FORMAT(date,'USA')),'$hora','$cantidad')";
 	$resultado_datos= mysqli_query($mysqli, $result_datos);
 
 	$mail = new PHPMailer(true);
 
-    try {
-      //Server settings
-      $mail->SMTPDebug = 0;                      // Enable verbose debug output
-      $mail->isSMTP();                                            // Send using SMTP
-      $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
-      $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-      $mail->Username   = 'restauranett@gmail.com';                     // SMTP username
-      $mail->Password   = 'modernwarfare3';                               // SMTP password
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-      $mail->Port       = 587;                                    // TCP port to connect to
 
-      //Recipients
-      $mail->setFrom('restauranett@gmail.com', 'Restauranet');
-      $mail->addAddress($email);     // Add a recipient
+    //Server settings
+    $mail->SMTPDebug = 0;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'restauranett@gmail.com';                     // SMTP username
+    $mail->Password   = 'modernwarfare3';                               // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+    $mail->Port       = 587;                                    // TCP port to connect to
 
-      // Content
-      $mail->isHTML(true);                                  // Set email format to HTML
-      $mail->Subject = 'Reserva Realizada';
-      $mail->Body    = 'Hola! Su reserva para la fecha'.' '.$fecha.' '.'a las '.$hora.' '.'ha sido realizada con exito.En el restaurante '.$nombre.'.'.'Ubicado en'.' '.$localidad.' en la calle '.$calle.' '.$altura.'.'.'Buen provecho';
+    //Recipients
+    $mail->setFrom('restauranett@gmail.com', 'Restauranet');
+    $mail->addAddress($email);     // Add a recipient
 
-      $mail->send();
-    } catch(Exception $e) {
-      echo 'Error al enviar correo';
-    }
-    
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Reserva Realizada';
+    $mail->Body    = 'Hola! Su reserva para la fecha'.' '.$fecha.' '.'a las '.$hora.' '.'ha sido realizada con exito.En el restaurante '.$nombre.'.'.'Ubicado en'.' '.$localidad.' en la calle '.$calle.' '.$altura.'.'.'Buen provecho';
+
+    $mail->send();
 
 	/*if(mysqli_query($mysqli, $result_datos)){
 		echo 'guardado con exito'.'<br><br>';

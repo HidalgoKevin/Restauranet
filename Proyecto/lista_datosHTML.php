@@ -61,24 +61,25 @@
     <script>
     $(document).ready(function(){
 
-      $('#busqueda').typeahead({
-        source: function(query, result)
+     $('#busqueda').typeahead({
+      source: function(query, result)
+      {
+       $.ajax({
+        url:"php/autocompletado.php",
+        method:"POST",
+        data:{query:query},
+        dataType:"json",
+        success:function(data)
         {
-         $.ajax({
-          url:"php/autocompletado.php",
-          method:"POST",
-          data:{query:query},
-          dataType:"json",
-          success:function(data)
-          {
-           result($.map(data, function(item){
-            return item;
-           }));
-          }
-         })
+         result($.map(data, function(item){
+          return item;
+         }));
         }
-      });
-     
-    }); 
+       })
+      }
+     });
+
+    });
+    
     </script>
 </body>

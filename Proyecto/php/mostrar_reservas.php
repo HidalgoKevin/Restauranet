@@ -3,7 +3,6 @@
 	//conexion con base de datos
 	include_once("conexion_bd.php");
     include("sesion.php");
-    include_once("php/funciones/ui/reserva_ui.php");
 
     if(isset($_POST["idUsuario"])) {
       $idcliente = $_POST["idUsuario"];
@@ -16,16 +15,57 @@
         return;
       }
     }
+	//ID DE CLIENTE QUE HAY QUE CAMBIARLO ESTA SETEADO XQ NO LO PUEDO TRAER DE LA SESSION DEL INICIO DE SESION
+	
+	/*echo "<h1>Lista de Reservas para hoy</h1>";
+	
+	$result_reservas = "SELECT * FROM reservas WHERE DAY(fecha) = DAY(CURDATE()) AND MONTH(fecha) = MONTH(CURDATE()) AND YEAR(fecha) = YEAR(CURDATE())";
+	$resultado_reservas = mysqli_query($mysqli, $result_reservas);
+	while($row_reservas = mysqli_fetch_array($resultado_reservas)){
+		echo "idcliente: ".$row_reservas['idcliente']."<br>";
+		echo "fecha: ".date('d/m/Y', strtotime($row_horarios['fecha']))."<hr>";
+	}*/
 
 	echo '<h1 class="titulitos"><i class="fas fa-list"></i> Lista de Reservas</h1><br><hr>';
     if(isset($_SESSION['msg'])){
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
     }
-    
-	$result_reservas = "SELECT R.*, REST.nombre as 'nombre_restaurante', DIR.*,  ER.nombre as 'nombre_estado' FROM reservas R left join estado_reserva ER ON R.estado=ER.idestado LEFT JOIN restaurante REST ON R.ID_RES = REST.ID_RES LEFT JOIN direccion DIR ON REST.ID_RES = DIR.ID_DIR WHERE idcliente=$idcliente AND R.estado in (0,1,2) ORDER BY fecha, hora";
+	$result_reservas = "SELECT * FROM reservas WHERE idcliente=$idcliente ORDER BY fecha , hora";
 	$resultado_reservas = mysqli_query($mysqli, $result_reservas);
 	while($row_reservas = mysqli_fetch_array($resultado_reservas)){
-      imprimirReservaComensal($row_reservas);
-    }
-?>
+		//EN CADA PASADA CAPTURO EL ID_RES PARA IMPRIMIR LOS DATOS CORRESPONDIENTES DE CADA RESTAURANT
+		$idrestaurante=$row_reservas['ID_RES'];
+		$result = "SELECT * FROM restaurante WHERE ID_RES=$idrestaurante";
+		$resultado = mysqli_query($mysqli, $result);
+		$row_resultado = mysqli_fetch_array($resultado);
+		$nombre=$row_resultado['nombre'];
+		//OBTENGO LOS DATO DE LA UBICACION DEL RESTAURANT
+		$result = "SELECT * FROM direccion WHERE ID_DIR=$idrestaurante";
+		$resultado = mysqli_query($mysqli, $result);
+		$row_resultado = mysqli_fetch_array($resultado);
+		//AQUI SE OBTIENEN LOS DATOS DE LA RESERVA
+		$cliente=$row_reservas['idcliente'];
+		$idreserva=$row_reservas['idreserva'];
+		//SE IMPRIMEN POR PANTALLA LOS DATOS DE LA RESERVA QUE SE OBTUVIERON DE LAS QUERYS
+		echo '<b><i class="far fa-calendar-alt"></i> Fecha: </b>'.date('d/m/Y', strtotime($row_reservas['fecha']))."<br>"."<br>";
+        echo '<b><i class="fas fa-clock"></i> Hora:</b> '.$row_reservas['hora']."<br>"."<br>";
+		echo '<b><i class="fas fa-users"></i> Cantidad de personas: </b>'.$row_reservas['cantidad_personas']."<br><br>";
+		echo '<b><i class="fas fa-utensils"></i> Restaurant:</b> '.$nombre."<br>"."<br>";
+		echo '<b><i class="fas fa-map-marker-alt"></i> Localidad:</b> '.$row_resultado['localidad']."<br>"."<br>";
+		echo '<b><i class="fas fa-road"></i> Calle:</b> '.$row_resultado['nombreCalle'].",".$row_resultado['numero']."<br>"."<br>";
+		?>
+		<form method="POST" id="form_eliminar_<?php echo $idreserva; ?>" action="php/borrar_reserva.php">
+                            <br>
+                            <input type="hidden" name="eliminar" value="<?php echo $idreserva; ?>"  />
+                            <input type="submit" value="Cancelar Reserva" class="boton btn">
+                           <hr width="50%">
+                        </form>
+		<form method="POST" id="form_calificar_<?php echo $idreserva; ?>" action="php/calificar_reserva.php">
+                            <br>
+                            <input type="hidden" name="calificar" value="<?php echo $idreserva; ?>"/>
+                            <input type="submit" value="Calificar" class="boton btn">
+                           <hr width="50%">
+                        </form>
+	    <?php	
+}?>

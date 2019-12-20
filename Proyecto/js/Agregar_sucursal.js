@@ -140,9 +140,6 @@ $(function() {
           if(form.valid()) {
             guardar();
           }
-        },	
-        cancelar: function(){	
-          location.href="Lista_Sucursales.html";	
         }
       }
     });
